@@ -1,55 +1,84 @@
-/* * {
+:root {
+    --fondo: #ffffff;
+    --borde: #bfc0c0;
+    --color-fuente-menu: #767981;
+    --borde-formularios: #2d3142;
+    --color-fuente-formularios: #191b24;
+
+}
+* {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box
+}
+html {
+    font-family: 'Aldrich', sans-serif;
+    font-family: 'Wallpoet', cursive;
+    font-size: 62.5%;
+}
+#logo {
+    display: none;
+}
+/* #menu-lateral {
+    display: none;
 } */
-
-body {
-    color: #B1B2FF;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #EEF1FF;
-    font-size: 16px;
-    margin: 0                                                                             ;
-    padding: 0;
+#menu-lateral {
+    width: 150px;
+    background-color: var(--fondo);
+    border: 2px solid var(--borde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-#container {
-    width: 70%;
-    padding: 0;
-    text-align: left;
-    border: 1px solid #ddd;
-    margin: 0 auto;
+#menu-lateral img {
+    width: 20px;
 }
-
-#container h1 {
-    font-size: 20px;
+#menu-lateral ul {
+    list-style: none;
 }
-
+#menu-lateral a {
+    text-decoration: none;
+}
 #cabecera {
-    background: #AAC4FF;
+    background: var(--fondo);
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
-    color: white;
-    font-weight: bold;
+    color: var(--color-fuente-menu);
+    font-size: .7rem;
     margin: 0;
     padding: 0.5em 0 0.5em 2em;
 }
-
 #cabecera #logo {
     width: 20px;
     vertical-align: middle;
 }
-
-#cabecera #tagline {
-    padding: 0 0 0 1em;
-    font-weight: normal;
-    font-size: 0.8em;
+button {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 2.4rem;
+    height: 3rem;
+    border: 0;
+    background: transparent;
+    gap: .65rem;
 }
-
-#post {
-    background: white;
-    padding: 1em;
+button div {
+    background: black;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all .5s;
+    transform-origin: left;
 }
-
+button:hover div:first-child {
+    transform: rotate(45deg);
+}
+button:hover div:nth-child(2) {
+    opacity: 0;
+}
+button:hover div:last-child {
+    transform: rotate(-45deg);
+}
 #footer {
     background: #777;
     color: white;
