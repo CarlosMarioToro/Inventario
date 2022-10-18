@@ -4,7 +4,13 @@
     --color-fuente-menu: #767981;
     --borde-formularios: #2d3142;
     --color-fuente-formularios: #191b24;
-
+    --primary-color: #D96AA7;
+    --secondary-color: #422C73;
+    --complimentary-color: #88BFB5;
+    --complimentary-color2: #888cbf;
+    --complimentary-color3: #bf889d;
+    --contrast-color: #F2E527;
+    --light-color: #D2A9D9;
 }
 * {
 	padding: 0;
@@ -20,66 +26,101 @@ body {
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template-areas: 
+    grid-template-areas:
         "head head head"
         "nav main main"
         "foot foot foot";
-    grid-template-columns: 50px 1fr 30px;
-    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 12vw 88vw;
+    grid-template-rows: 10vh 80vh 10vh;
 }
 #cabecera {
     grid-area: head;
+    display: grid;
+    justify-content: center;
     background-color: var(--fondo);
-    border: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
 }
 #logo {
     display: none;
 }
+#cabecera h1 {
+    font-size: 1.5rem;
+}
 #menu-lateral {
     grid-area: nav;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     background: var(--secondary-color);
-    border: 1px solid var(--borde);
+    border-right: 1px solid var(--borde);
 }
 #menu-lateral a {
     font-size: 20px;
     color: var(--color-fuente-menu);
     text-decoration: none;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
-
-/* #menu-lateral {
-    display: none;
-} */
-/* #menu-lateral {
-    width: 150px;
-    background-color: var(--fondo);
-    border: 2px solid var(--borde);
+section {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transition: all ease-in .5s;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
-#menu-lateral img {
-    width: 20px;
+section h1 {
+    color: #fff;
+    font-size: 3.5rem;
+    left: 100px;
+    text-transform: uppercase;
+    opacity: 0;
 }
-#menu-lateral ul {
-    list-style: none;
+/* Styles applied on trigger */
+section:target {
+    opacity: 1;
+    position: absolute;
+    left: 12vw;
+    top: 10vh;
+    width: 88vw;
+    height: 80vh;
+    z-index: 10;
 }
-#menu-lateral a {
-    text-decoration: none;
+
+section:target h1 {
+    opacity: 0;
+    animation: 2s fadeIn forwards .5s;
 }
-#cabecera {
-    background: var(--fondo);
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
-    color: var(--color-fuente-menu);
-    font-size: .7rem;
-    margin: 0;
-    padding: 0.5em 0 0.5em 2em;
+
+#first {
+  background:var(--primary-color);
 }
-#cabecera #logo {
-    width: 20px;
-    vertical-align: middle;
-} */
+#second {
+    background: var(--complimentary-color);
+}
+
+#third {
+    background: var(--contrast-color);
+}
+
+#fourth {
+    background: var(--light-color);
+}
+
+#fifth {
+    background: var(--complimentary-color2);
+}
+
+#sixth {
+    background: var(--complimentary-color3);
+}
+
+@keyframes fadeIn {
+    100% { opacity:1 }
+}
 #footer {
     grid-area: foot;
     background: #777;
