@@ -16,13 +16,42 @@ html {
     font-family: 'Wallpoet', cursive;
     font-size: 62.5%;
 }
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: 
+        "head head head"
+        "nav main main"
+        "foot foot foot";
+    grid-template-columns: 50px 1fr 30px;
+    grid-template-rows: 50px 1fr 50px;
+}
+#cabecera {
+    grid-area: head;
+    background-color: var(--fondo);
+    border: 1px solid var(--borde);
+}
 #logo {
     display: none;
 }
+#menu-lateral {
+    grid-area: nav;
+    background: var(--secondary-color);
+    border: 1px solid var(--borde);
+}
+#menu-lateral a {
+    font-size: 20px;
+    color: var(--color-fuente-menu);
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
 /* #menu-lateral {
     display: none;
 } */
-#menu-lateral {
+/* #menu-lateral {
     width: 150px;
     background-color: var(--fondo);
     border: 2px solid var(--borde);
@@ -50,36 +79,9 @@ html {
 #cabecera #logo {
     width: 20px;
     vertical-align: middle;
-}
-button {
-    margin-left: 10px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 2.4rem;
-    height: 3rem;
-    border: 0;
-    background: transparent;
-    gap: .65rem;
-}
-button div {
-    background: black;
-    height: 2px;
-    width: 100%;
-    border-radius: 5px;
-    transition: all .5s;
-    transform-origin: left;
-}
-button:hover div:first-child {
-    transform: rotate(45deg);
-}
-button:hover div:nth-child(2) {
-    opacity: 0;
-}
-button:hover div:last-child {
-    transform: rotate(-45deg);
-}
+} */
 #footer {
+    grid-area: foot;
     background: #777;
     color: white;
     text-align: center;
